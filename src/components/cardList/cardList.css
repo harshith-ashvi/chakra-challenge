@@ -1,0 +1,3 @@
+.cardList:hover > img:not(:hover) {
+  opacity: 0.2;
+}
