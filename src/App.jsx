@@ -56,20 +56,31 @@ function App() {
 
   return (
     <>
-      <h2>Chakra Challenge</h2>
-      <div className="flex-justifyBetween">
+      <div className="hero">
+        <div className="container">
+          <h2>Chakra Challenge</h2>
+        </div>
+      </div>
+      <div className="flex-justifyBetween scoreBoard">
         <h4>Total Challenge: {totalScore.total}</h4>
         <h4>Your Score: {totalScore.user}</h4>
         <h4>Computer Score: {totalScore.computer}</h4>
       </div>
-      <div className="flex-justifyBetween">
+      <div className="flex-justifyBetween userSelection">
         <h4>Computer Chakra: {selected.computer}</h4>
         <h4>Your Chakra: {selected.user}</h4>
       </div>
-      <h4>Result: {result ?? "Challenge not started yet"}</h4>
-      <div>
-        <CardList items={CHAKRAS} handleCardClick={handleUserSelect} />
+      <h4 className="result">
+        Result: {result ?? "Challenge not started yet"}
+      </h4>
+      <div className="userOptions">
+        <CardList
+          className="flex-justifyAround flexWrap"
+          items={CHAKRAS}
+          handleCardClick={handleUserSelect}
+        />
       </div>
+
       <ToastContainer />
     </>
   );

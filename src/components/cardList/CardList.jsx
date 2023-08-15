@@ -1,8 +1,8 @@
 import Card from "../card/Card";
 
-const CardList = ({ items, handleCardClick }) => {
+const CardList = ({ className, items, handleCardClick }) => {
   return (
-    <div className="flex-center flexGap cardList">
+    <div className={`cardList flexGap ${className}`}>
       {items.map((item) => (
         <Card
           className="card"
