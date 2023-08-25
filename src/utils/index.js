@@ -1,4 +1,4 @@
-import { CHAKRAS, DATTEBATO_AUDIO, NARUTO_IMAGES, winAudio } from "../data";
+import { CHAKRAS, DATTEBATO_AUDIO, NARUTO_IMAGES } from "../data";
 
 export const getRandomChakra = () =>
   CHAKRAS[Math.floor(Math.random() * CHAKRAS.length)].name;
@@ -10,6 +10,7 @@ export const getResult = (userSelectedChakra, compueterSelectedChakra) => {
       image: NARUTO_IMAGES.narutoDraw,
       //   audio: DATTEBATO_AUDIO.draw,
       audio: DATTEBATO_AUDIO.thankful,
+      toastType: "warn",
     };
   } else if (
     (userSelectedChakra === "Fire" &&
@@ -28,12 +29,14 @@ export const getResult = (userSelectedChakra, compueterSelectedChakra) => {
       image: NARUTO_IMAGES.narutoWin,
       //   audio: winAudio[Math.floor(Math.random() * winAudio.length)],
       audio: DATTEBATO_AUDIO.happy,
+      toastType: "success",
     };
   } else {
     return {
       result: "You Lost",
       image: NARUTO_IMAGES.narutoLost,
       audio: DATTEBATO_AUDIO.sad,
+      toastType: "error",
     };
   }
 };

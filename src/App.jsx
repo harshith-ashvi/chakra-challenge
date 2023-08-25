@@ -30,8 +30,8 @@ function App() {
     }
   }, [result]);
 
-  const notify = ({ result, image, audio }) => {
-    toast.success(result, {
+  const notify = ({ result, image, audio, toastType }) => {
+    toast[toastType](result, {
       icon: <img src={image} alt="Notification" width="100px" height="100px" />,
       onOpen: () => audio.play(),
     });
